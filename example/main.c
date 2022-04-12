@@ -13,10 +13,14 @@ static void blink_task(void *pvParameters) {
     }
 }
 
+void console_task(void *pvParameters);
+
 int main() {
     stdio_init_all();
 
     xTaskCreate(blink_task, "blink", 256, NULL, 1, NULL);
+
+    xTaskCreate(console_task, "console", 1024, NULL, 1, NULL);
 
     vTaskStartScheduler();
 

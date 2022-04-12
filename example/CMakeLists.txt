@@ -1,4 +1,6 @@
 add_executable(example
+    Sample-CLI-commands.c
+    console.c
     main.c
 )
 target_link_libraries(example pico_stdlib freertos)

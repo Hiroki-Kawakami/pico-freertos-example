@@ -5,7 +5,7 @@
 
 static const char * const cliPrefix = "cli> ";
 
-void vRegisterSampleCLICommands( void );
+void cli_register_commands();
 
 void console_task(void *pvParameters) {
     int inputOffset = 0;
@@ -13,7 +13,7 @@ void console_task(void *pvParameters) {
     char *outputBuffer;
     BaseType_t hasNextOutput;
 
-    vRegisterSampleCLICommands();
+    cli_register_commands();
     outputBuffer = FreeRTOS_CLIGetOutputBuffer();
 
     printf("%s", cliPrefix);
